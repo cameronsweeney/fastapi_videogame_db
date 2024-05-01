@@ -4,7 +4,7 @@ from fastapi.responses import FileResponse
 
 
 from pydantic import BaseModel, conint, Field
-from typing import List, Optional
+from typing import List, Optional, Annotated
 from fastapi.middleware.cors import CORSMiddleware
 import psycopg2
 from psycopg2.extras import RealDictCursor
@@ -45,14 +45,13 @@ class Game(BaseModel):
     genre: Optional[str]
     time_vibe: str
     solo_multiplayer: str
-    difficulty_vibe: Optional[conint(ge=1, le=5)] = Field(default=None, description="Rate the game difficulty from 1 (easiest) to 5 (hardest)")
+    difficulty_vibe: Optional[Annotated[int, conint(ge=1, le=5)]] = Field(default=None, description="Rate the game difficulty from 1 (easiest) to 5 (hardest)")
     action_vibe: str
-    brainspace_vibe: Optional[conint(ge=1, le=5)] = Field(default=None, description="Rate the intellectual engagement from 1 (least) to 5 (most)")
+    brainspace_vibe: Optional[Annotated[int, conint(ge=1, le=5)]] = Field(default=None, description="Rate the intellectual engagement from 1 (least) to 5 (most)")
     developer: Optional[str]
     publisher: Optional[str]
     play_time: Optional[str]
     notes: Optional[str]
-
 
 # Serve static files
 app.mount("/static", StaticFiles(directory="static"), name="static")
