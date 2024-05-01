@@ -1,0 +1,38 @@
+/* Overall body styling */
+body {
+    background-color: #E7E0CB; /* Mocha background */
+    color: #011F00; /* Dark green text for contrast */
+    font-family: 'Arial', sans-serif; /* Simple and clean font */
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #228B22; /* Forest green background for the navbar */
+}
+
+/* Table styling */
+.table {
+    background-color: #FFF;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+}
+
+/* Modal content styling */
+.modal-content {
+    background-color: #FFF;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #228B22; /* Forest green background for buttons */
+    border: none;
+}
+
+.btn-secondary {
+    background-color: #6C757D; /* Neutral dark for secondary buttons */
+}
